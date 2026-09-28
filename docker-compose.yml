@@ -1,0 +1,15 @@
+services:
+  showroom:
+    build: .
+    image: localhost/showroom:local
+    ports:
+      - "5183:8080"
+    volumes:
+      # Branding set through the UI is written here — without this volume it is
+      # lost whenever the container is replaced.
+      - showroom-data:/data
+      # Override the banner message without rebuilding the image:
+      # - ./config.json:/app/public/config.json:ro
+
+volumes:
+  showroom-data:
