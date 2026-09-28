@@ -161,16 +161,19 @@ export default function App() {
       />
 
       <main className="min-w-0 flex-1">
-        {deploymentConfig.bannerMessage && <Banner message={deploymentConfig.bannerMessage} />}
-        <Header
-          ref={searchInputRef}
-          title={view === "recent" ? "Recent" : "Demo Showroom"}
-          search={search}
-          onSearchChange={setSearch}
-          viewMode={viewMode}
-          onViewModeChange={setViewMode}
-          onOpenMobileSidebar={() => sidebar.setMobileOpen(true)}
-        />
+        {/* Banner and header stick together, in normal flow, so neither covers the tiles. */}
+        <div className="sticky top-0 z-30">
+          {deploymentConfig.bannerMessage && <Banner message={deploymentConfig.bannerMessage} />}
+          <Header
+            ref={searchInputRef}
+            title={view === "recent" ? "Recent" : "Demo Showroom"}
+            search={search}
+            onSearchChange={setSearch}
+            viewMode={viewMode}
+            onViewModeChange={setViewMode}
+            onOpenMobileSidebar={() => sidebar.setMobileOpen(true)}
+          />
+        </div>
 
         <div className="mx-auto max-w-[1280px] px-4 py-8 md:px-8">
           {demos.length === 0 ? (

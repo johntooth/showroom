@@ -52,7 +52,7 @@ The banner across the top is read from `public/config.json` (served as `/config.
 { "bannerMessage": "This is a staging environment." }
 ```
 
-Leave `bannerMessage` empty (or the file absent) to hide the banner.
+The banner is pinned above the header, so it stays visible while scrolling, and users can't dismiss it — it shows on every visit for as long as the message is set. It takes up layout space rather than floating over the page, so it never covers tiles, and demos themselves open in their own tab without it. Leave `bannerMessage` empty (or the file absent) to hide it. Changes take effect on the next page load.
 
 ## Run the built app locally
 

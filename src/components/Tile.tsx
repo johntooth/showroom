@@ -55,7 +55,7 @@ export function Tile({
           onRemove(demo.id)
         }
       }}
-      className={`group relative animate-tile-in rounded-2xl border transition-all duration-150 active:scale-[0.98] ${
+      className={`group relative scroll-mt-32 animate-tile-in rounded-2xl border transition-all duration-150 active:scale-[0.98] ${
         compact ? "p-3" : "min-h-[188px] p-4"
       } ${
         isDragOver
